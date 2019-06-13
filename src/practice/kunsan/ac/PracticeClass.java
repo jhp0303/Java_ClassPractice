@@ -18,5 +18,15 @@ public class PracticeClass {
 		
 		System.out.println("합계 : " + sum );
 	}
+	
+	public static void practice3()	{	//2단부터 9단까지의 구구단을 이중 포문을 이용해 출력
+		for(int i = 2; i < 10; i++)	{
+			System.out.println("**" + i + "**" );
+			for(int j = 1; j < 10; j++)	{
+				System.out.println(i + "x" + j + "=" + i*j );
+			}
+			System.out.println();
+		}
+	}
 
 }
