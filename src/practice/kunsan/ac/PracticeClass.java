@@ -8,5 +8,15 @@ public class PracticeClass {
 		double f = (c * 9/5) + 32;
 		System.out.println("화씨: " + f );
 	}
+	
+	public static void practice2()	{	//1부터 100까지 합산
+		int sum = 0;
+		
+		for(int i = 0; i <= 100; i++)	{
+			sum += i;
+		}
+		
+		System.out.println("합계 : " + sum );
+	}
 
 }
