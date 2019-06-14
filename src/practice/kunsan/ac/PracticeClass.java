@@ -1,4 +1,6 @@
 package practice.kunsan.ac;
+import java.util.Scanner;
+
 
 public class PracticeClass {
 
@@ -28,5 +30,49 @@ public class PracticeClass {
 			System.out.println();
 		}
 	}
-
+	
+	public static void practice4()	{	// 입력받은 number만큼의 별표 출력하기
+		System.out.print("Enter line number: ");
+		
+		Scanner scanIn = new Scanner(System.in); 
+		
+		int number = scanIn.nextInt();
+		scanIn.close();
+		
+		for(int i = 1; i <= number; i++)	{
+			for(int j = 1; j <= i; j++) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+	}
+	
+	public static void practice5()	{	// 입력받은 점수의 학점을 계산하기
+		System.out.print("점수 입력: ");
+		Scanner scanIn = new Scanner(System.in);
+		
+		int score = scanIn.nextInt();
+		scanIn.close();
+		
+		if (score >= 90){
+			System.out.print("학점: A");
+		}
+		
+		else if (score >= 80){
+			System.out.print("학점: B");
+		}
+		
+		else if (score >= 70){
+			System.out.print("학점: C");
+		}
+		
+		else if (score >= 60){
+			System.out.print("학점: D");
+		}
+		
+		else {
+			System.out.print("학점: F");
+		}
+	}
 }
+
