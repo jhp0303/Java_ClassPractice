@@ -1,16 +1,15 @@
 package practice.kunsan.ac;
 import java.util.Scanner;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
 public class PracticeClass {
 
 	public static void practice1()	{	//섭씨 온도를 화씨 온도로 변환
-		double c = 31.5;
-		System.out.println("섭씨: " + c );
-		double f = (c * 9/5) + 32;
-		System.out.println("화씨: " + f );
+		double celsius = 31.5;
+		System.out.println(String.format("섭씨: %.2f", celsius));
+		double fahrenheit = Util.celsiusToFahrenheit(celsius);
+		System.out.println(String.format("섭씨: %.2f", fahrenheit));
 	}
 	
 	public static void practice2()	{	//1부터 100까지 합산
@@ -21,6 +20,22 @@ public class PracticeClass {
 		}
 		
 		System.out.println("합계 : " + sum );
+		
+		/*	강사님(대표님)이 만든거
+		int m = 1;
+		final int MAX_VALUE = 100;
+		int sum = 0;
+		
+		while(m < MAX_VALUE + 1)
+		{
+			sum += m;
+			m++;
+		}
+		
+		String outString = "Sum of numbers : " + sum;
+		System.out.println(outString);
+		*/
+		 
 	}
 	
 	public static void practice3()	{	//2단부터 9단까지의 구구단을 이중 포문을 이용해 출력
@@ -110,6 +125,6 @@ public class PracticeClass {
 			
 			System.out.println("ID=" + i + ": 합계=" + sum + ", 평균=" + String.format("%.2f", avg));
 		}
-	}	
+	}
 }
 
