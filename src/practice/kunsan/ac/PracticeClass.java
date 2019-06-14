@@ -102,6 +102,8 @@ public class PracticeClass {
 		else {
 			System.out.print("학점: F");
 		}
+		
+		
 	}
 	
 	public static void practice6()	{	//10명의 학생의 점수를 이용해 합계와 평균을 구해 출력하기
@@ -162,15 +164,15 @@ public class PracticeClass {
 	
 	public static void practice9()	{	//"Hello World"를 시저의 암호화 기법을 사용해 "Khoor Zroug"로 출력하기
 		String original = "Hello World";
-		System.out.print("암호: ");
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < original.length(); i++)	{
 			char c = original.charAt(i);
 			if ((c >= 65 && c <= 90) || (c >= 97 && c<= 122)){
 				c = (char)(c+3);
 			}
-			System.out.print(c);
+			sb.append(c);
 		}
-		
+	System.out.print("암호: " + sb.toString());
 	}
 }
 
