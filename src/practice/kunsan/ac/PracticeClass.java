@@ -1,5 +1,6 @@
 package practice.kunsan.ac;
 import java.util.Scanner;
+import java.util.Arrays;
 
 
 public class PracticeClass {
@@ -54,19 +55,19 @@ public class PracticeClass {
 		int score = scanIn.nextInt();
 		scanIn.close();
 		
-		if (score >= 90){
+		if (score >= 90)	{
 			System.out.print("학점: A");
 		}
 		
-		else if (score >= 80){
+		else if (score >= 80)	{
 			System.out.print("학점: B");
 		}
 		
-		else if (score >= 70){
+		else if (score >= 70)	{
 			System.out.print("학점: C");
 		}
 		
-		else if (score >= 60){
+		else if (score >= 60)	{
 			System.out.print("학점: D");
 		}
 		
@@ -74,5 +75,21 @@ public class PracticeClass {
 			System.out.print("학점: F");
 		}
 	}
+	
+	public static void practice6()	{	//10명의 학생의 점수를 이용해 합계와 평균을 구해 출력하기
+		int[] scores = {90, 75, 85, 95, 70, 75, 85, 85, 95, 72};
+		double result = 0;
+		
+		for(int i = 0; i < scores.length; i++)	{
+			result += scores[i];
+		}
+		double evg = result / scores.length;
+		
+		System.out.println("점수: " + Arrays.toString(scores));
+		System.out.println("합계: " + result);
+		System.out.println("평균: " + evg);
+	}
+	
+	
 }
 
