@@ -174,5 +174,13 @@ public class PracticeClass {
 		}
 	System.out.print("암호: " + sb.toString());
 	}
+	
+	public static int practice10(int[] data)	{	//임의의 정수 값을 배열로 받아들여, 그 합계를 구하는 함수를 작성후 출력하기
+		int result = 0;
+		for(int i=0; i < data.length; i++) {
+			result += data[i];
+		}
+		return result;
+	}
 }
 
