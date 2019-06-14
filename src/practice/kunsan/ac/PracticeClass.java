@@ -1,5 +1,6 @@
 package practice.kunsan.ac;
 import java.util.Scanner;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
@@ -90,6 +91,25 @@ public class PracticeClass {
 		System.out.println("평균: " + evg);
 	}
 	
-	
+	public static void practice7()	{	//5명의 학생의 3과목의 점수의 각 합계와 평균을 구해 출력하기
+		int[][] scores = {
+			{90, 80, 80},
+			{85, 85, 95}, 
+			{95, 70, 75}, 
+			{80, 80, 90}, 
+			{90, 75, 80}
+			};
+		
+		for(int i = 0; i < scores.length; i++)	{
+			int sum = 0;
+			for(int j = 0; j < scores[i].length; j++)	{
+				sum += scores[i][j];	
+			}
+			//double avg = (double) sum / 3;
+			double avg = sum / 3.0;
+			
+			System.out.println("ID=" + i + ": 합계=" + sum + ", 평균=" + String.format("%.2f", avg));
+		}
+	}	
 }
 
