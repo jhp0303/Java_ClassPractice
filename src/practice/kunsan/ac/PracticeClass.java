@@ -126,5 +126,26 @@ public class PracticeClass {
 			System.out.println("ID=" + i + ": 합계=" + sum + ", 평균=" + String.format("%.2f", avg));
 		}
 	}
+	
+	public static void practice8()	{	//대문자는 소문자로, 소문자는 대문자로 변환해 출력하기
+		String output = "Hello, World";
+		String result = "";
+		
+		for (int i = 0; i < output.length(); i++) {
+			char c = output.charAt(i);
+			if (c >= 65 && c <= 90) {
+				result += String.valueOf(c).toLowerCase();
+			}
+			else if (c >= 97 && c <= 122) {
+				result += String.valueOf(c).toUpperCase();
+			}
+			else {
+				result += c;
+			}
+		}
+
+		System.out.println(output);
+		System.out.println(result);
+	}
 }
 
