@@ -62,6 +62,18 @@ public class PracticeClass {
 			}
 			System.out.println("");
 		}
+		
+		/*
+		System.out.print("Enter line number: ");
+		try(Scanner sc = new Scanner(system.in))	{	//try는 {}안에 실행이 되고 끝나면 자동으로 close를 해줌
+			int count = sc.nextInt();
+			
+			for (int i = 0; i <count; i++)	{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		*/
 	}
 	
 	public static void practice5()	{	// 입력받은 점수의 학점을 계산하기
