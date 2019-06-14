@@ -159,5 +159,18 @@ public class PracticeClass {
 		System.out.println(output);
 		System.out.println(result);
 	}
+	
+	public static void practice9()	{	//"Hello World"를 시저의 암호화 기법을 사용해 "Khoor Zroug"로 출력하기
+		String original = "Hello World";
+		System.out.print("암호: ");
+		for (int i = 0; i < original.length(); i++)	{
+			char c = original.charAt(i);
+			if ((c >= 65 && c <= 90) || (c >= 97 && c<= 122)){
+				c = (char)(c+3);
+			}
+			System.out.print(c);
+		}
+		
+	}
 }
 
