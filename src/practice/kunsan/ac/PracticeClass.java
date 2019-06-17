@@ -218,5 +218,22 @@ public class PracticeClass {
 		}
 	}
 	
+	public static void practice13()	{	// 내힘으로 못해서 실패
+		
+	}
+	/*
+	class Calculater<T> {	//	practice13에 쓰이는 계산기 (C#의 dynamic을 구현하지 못함)
+		@SuppressWarnings("unchecked")
+		public void Add(T a, T b) {
+			T A = a;
+			T B = b;
+			
+			T sum = A + B;
+		}
+	}
+	*/
+	
+	
+	
 }
 
