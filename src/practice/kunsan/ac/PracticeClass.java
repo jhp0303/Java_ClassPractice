@@ -182,5 +182,18 @@ public class PracticeClass {
 		}
 		return result;
 	}
+	
+	public static int Add(int a, int b)	{	//2개의 정수 값을 받아들여 덧셈을 하는 함수(practice11)
+		return a+b;
+	}
+	public static int Substraction(int a, int b)	{	//2개의 정수 값을 받아들여 뺄셈을 하는 함수(practice11)
+		return a-b;
+	}
+	public static int Multiplication(int a, int b)	{	//2개의 정수 값을 받아들여 곱셈을 하는 함수(practice11)
+		return a*b;
+	}
+	public static int Division(int a, int b)	{	//2개의 정수 값을 받아들여 나눗셈을 하는 함수(practice11)
+		return a/b;
+	}
 }
 
