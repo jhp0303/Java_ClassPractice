@@ -233,6 +233,50 @@ public class PracticeClass {
 	}
 	*/
 	
+	public static void practice14()	{	//자동차의 속도를 계산해 출력하기
+		Car car = new Car("Via");
+		System.out.println("자동차 이름: "+ car.Name);
+		car.Start();
+		System.out.println("시작시 속도: "+ car.speed);
+		car.Accelerate(10);
+		System.out.println("엑셀 1단계 속도: "+ car.speed);
+		car.Accelerate(20);
+		System.out.println("엑셀 2단계 속도: "+ car.speed);
+		car.Stop();
+		System.out.println("정지후 속도: "+ car.speed);
+	}
+	
+	static class Car {	//practice14에 쓰이는 Car class
+		private int speed;
+		
+		public String Name;
+		public String Maker;
+		public String Model;
+		public int Speed;
+		
+		public void setSpeed(int Speed) {
+			this.speed = Speed;
+		}
+		public Car(String car_name) {
+			this.Name = car_name;
+		}
+		
+		public void Start() {
+			speed = 1;
+		}
+
+		public void Stop() {
+			speed = 0;
+		}
+
+		public void Accelerate(int value) {
+			speed += value;
+		}
+
+		public void Break(int value) {
+			speed -= value;
+		}
+	}
 	
 	
 }

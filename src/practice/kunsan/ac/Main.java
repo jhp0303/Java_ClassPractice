@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		//System.out.println("Hello World");
 		
-		PracticeClass.practice12();
+		PracticeClass.practice14();
 		
 		/*// Practice #10 - 메인 함수
 		int[] a = { 80, 90, 95, 75, 70 };
