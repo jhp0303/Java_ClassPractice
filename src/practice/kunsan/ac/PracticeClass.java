@@ -3,6 +3,10 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class PracticeClass {
 
@@ -416,6 +420,23 @@ public class PracticeClass {
 			//super.SayName();	//C#의 base.SayName(); 과 동일
 			System.out.println("I'm part-time employeer. My name is "+ Name);
 		}
+	}
+	
+	public static void practice17() {
+		try {
+			File file = new File("D:\\score.txt");
+			FileReader filereader = new FileReader(file);
+			int singleCh = 0;
+			while ((singleCh = filereader.read()) != -1) {
+				System.out.print((char) singleCh);
+			}
+			filereader.close();
+		} catch (FileNotFoundException e) {
+			// TODO: handle exception
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+
 	}
 }
 
