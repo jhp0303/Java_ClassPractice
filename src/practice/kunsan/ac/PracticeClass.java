@@ -195,5 +195,28 @@ public class PracticeClass {
 	public static int Division(int a, int b)	{	//2개의 정수 값을 받아들여 나눗셈을 하는 함수(practice11)
 		return a/b;
 	}
+	
+	public static void practice12()	{	// 삼각형 세 변의 길이를 주고 둘레의 길이를 출력하기
+		Round triA = new Round();
+		triA.Triangle(3, 4, 5);
+		Round triB = new Round();
+		triB.Triangle(3, 3, 3);
+		triA.Draw(1);
+		triB.Draw(2);
+	}
+	static class Round	{	//practice12의 둘레 구하고 출력하는 클래스
+		private int A, B, C;
+		public void Triangle(int a, int b, int c) {
+			A = a;
+			B = b;
+			C = c;
+		}
+		public void Draw(int index)	{
+			int result = A + B + C;
+			System.out.println("삼각형" + index + ": A=" + A + " B=" + B + " C=" + C);
+			System.out.println("둘레길이: " + result);
+		}
+	}
+	
 }
 

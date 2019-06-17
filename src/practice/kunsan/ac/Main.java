@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		//System.out.println("Hello World");
 		
-		//PracticeClass.practice9();
+		PracticeClass.practice12();
 		
 		/*// Practice #10 - 메인 함수
 		int[] a = { 80, 90, 95, 75, 70 };
@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Sum<B> = " + sumB);
         */
 		
-		//Practice #11 - 메인 함수
+		/* //Practice #11 - 메인 함수
 		int a = 3, b = 5, c = 2, d = 3;
 		int add = PracticeClass.Add(a, b);
 		int sub = PracticeClass.Substraction(add, c);
@@ -30,6 +30,7 @@ public class Main {
 		int div = PracticeClass.Division(mul, d);
 		
 		System.out.println("(" + a + " + " + b + " - " + c + ") x " + c + " / " + d + " = " + div);
+		*/
 	}
 
 }
