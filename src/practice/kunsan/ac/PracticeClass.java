@@ -1,7 +1,8 @@
 package practice.kunsan.ac;
 import java.util.Scanner;
 import java.util.Arrays;
-
+import java.util.List;
+import java.util.ArrayList;
 
 public class PracticeClass {
 
@@ -275,6 +276,77 @@ public class PracticeClass {
 
 		public void Break(int value) {
 			speed -= value;
+		}
+	}
+	
+	public static void practice15()	{
+		MyPaint paint = new MyPaint(); 
+		
+		TriangleDraw t = new TriangleDraw(3,4,5);
+		paint.DrawShape(t);
+		System.out.println();
+		
+		RectangleDraw r = new RectangleDraw(5,10);
+		paint.DrawShape(r);
+		System.out.println();
+		
+		CustomShapeDraw c = new CustomShapeDraw(5,10,2,2);
+		paint.DrawShape(c);
+	}
+	
+	public interface IDrawable{	// Draw메소드를 가지는 IDrawable 인터페이스
+		void Draw();
+	}
+	
+	static class MyPaint {
+		List<IDrawable> drawables = new ArrayList<IDrawable>();	//한번 출력한것을 또 출력해주기 위해서 list 작성
+
+		public void DrawShape(IDrawable shape) {	//	생성했던 도형클래스들을 저장하는 메서드
+			drawables.add(shape);
+
+			for (IDrawable drawable : drawables) {	//	foreach문과 동일 ( : = in)
+				drawable.Draw();
+			}
+		}
+	}
+	
+	static class TriangleDraw implements IDrawable {
+		private int A, B, C;
+
+		public TriangleDraw(int a, int b, int c) {
+			A = a;
+			B = b;
+			C = c;
+		}
+
+		public void Draw() {
+			System.out.println("Draw triangle(" + A + "," + B + "," + C + ")");
+		}
+	}
+	static class RectangleDraw implements IDrawable {
+		private int w, h;
+
+		public RectangleDraw(int Width, int Height) {
+			w = Width;
+			h = Height;
+		}
+
+		public void Draw() {
+			System.out.println("Draw Rectangle(" + w + ", " + h + ")");
+		}
+	}
+	static class CustomShapeDraw implements IDrawable {
+		private int w, h, x, y;
+
+		public CustomShapeDraw(int Width, int Height, int X, int Y) {
+			w = Width;
+			h = Height;
+			x = X;
+			y = Y;
+		}
+
+		public void Draw() {
+			System.out.println("Draw triangle(" + w + ", " + h + ", " + x + ", " + y + ")");
 		}
 	}
 	
