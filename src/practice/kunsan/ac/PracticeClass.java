@@ -350,6 +350,72 @@ public class PracticeClass {
 		}
 	}
 	
+	public static void practice16() {
+		FullTimeEmployee fe = new FullTimeEmployee("Via", 1000000);
+		fe.AnnualSalary = 10000;
+		fe.AdjustSalary(-100);
+		System.out.println(fe.Name+"'s annual salary is "+ fe.AnnualSalary);
+		fe.SayName();
+		
+		PartTimeEmployee pe = new PartTimeEmployee("Kisun");
+		pe.hourlyRate = 10;
+		int workhour = 8;
+		int totalpayment = pe.CalculatePay(workhour);
+		System.out.println(pe.Name+"'s work hour is "+ workhour + ", total payment is "+ totalpayment);
+		pe.SayName();
+	}
+	static class Employee{
+		public String Name;
+		public String Email;
+		
+		public Employee(String name) {
+			this.Name = name;
+		}
+		
+		public void SayName() {
+			System.out.println("My Name is "+Name);
+		}
+	}
 	
+	static class FullTimeEmployee extends Employee	{
+		private int EmployeePay;
+		public int getEmployeePay() {
+			return EmployeePay;
+		}
+		
+		public FullTimeEmployee(String name, int number) {
+			super(name);
+			EmployeePay = number;
+		}
+		public int AnnualSalary;
+		public int getAnnualSalary() {
+			return AnnualSalary;
+		}
+		public void AdjustSalary(int amount) {
+			this.AnnualSalary += amount;
+		}
+		
+		public void SayName() {
+			System.out.println("My Payment is "+ EmployeePay + " / name is "+ Name);
+		}
+	}
+	
+	static class PartTimeEmployee extends Employee	{
+		public PartTimeEmployee(String name) {
+			super(name);
+		}
+		public int hourlyRate;
+		public int gethourlyRate() {
+			return hourlyRate;
+		}
+		public int CalculatePay(int time) {
+			return hourlyRate * time;
+		}
+		
+		public void SayName() {
+			//super.SayName();	//C#의 base.SayName(); 과 동일
+			System.out.println("I'm part-time employeer. My name is "+ Name);
+		}
+	}
 }
 
