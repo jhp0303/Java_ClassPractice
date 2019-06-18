@@ -1,12 +1,15 @@
 package practice.kunsan.ac;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class PracticeClass {
 
@@ -423,20 +426,45 @@ public class PracticeClass {
 	}
 	
 	public static void practice17() {
-		try {
-			File file = new File("D:\\score.txt");
-			FileReader filereader = new FileReader(file);
-			int singleCh = 0;
-			while ((singleCh = filereader.read()) != -1) {
-				System.out.print((char) singleCh);
-			}
-			filereader.close();
-		} catch (FileNotFoundException e) {
-			// TODO: handle exception
-		} catch (IOException e) {
-			System.out.println(e);
-		}
-
+		
+		try{
+            File file = new File("D:\\score.txt");	// 읽을 파일 경로 지정
+            File outFile = new File("D:\\scores.txt");	// 쓸 파일 경로 지정
+            
+            BufferedReader bufReader = new BufferedReader(new FileReader(file));	// 입력 버퍼 생성
+            BufferedWriter bw = new BufferedWriter(new FileWriter(outFile, false));	// 출력 버퍼 생성
+            
+            String line = "";	// 한 줄씩 읽을때 한줄을 저장할 변수
+            bw.write("[Output File]");
+            bw.newLine();
+            while((line = bufReader.readLine()) != null){
+                System.out.println(line);	//읽은 변수를 출력
+                String[] numbers = line.split(",");	// ","를 기준으로 line변수에 담긴 스트링을 분할
+                
+            	int sum = 0;	// 합계를 저장할 변수
+                int avg = 0;	// 평균을 저장할 변수
+                
+                for(int i=1; i<numbers.length; i++) {
+                	sum += Integer.parseInt(numbers[i]);	// numbers 변수를 int형으로 변환해 sum에 저장
+					avg = sum / (numbers.length - 1);	// numbers변수에 들어가있는 string의 길이만큼 sum을 나눠준 값을 avg에 저장
+                }
+                String s_sum = Integer.toString(sum);	// int형으로 쓰기를하면 에러가 뜨므로 string형으로 변환
+                String s_avg = Integer.toString(avg);	// int형으로 쓰기를하면 에러가 뜨므로 string형으로 변환
+            	bw.write(line);	// 원래있던 line변수 쓰기
+            	bw.write(',');	// ',' 쓰기
+            	bw.write(s_sum);	// s_sum(합계)변수 쓰기
+            	bw.write(',');	// ',' 쓰기
+            	bw.write(s_avg);	// s_avg(평균)변수 쓰기
+            	bw.newLine();	// 줄 띄우기 (엔터)
+            }
+            //.readLine()은 끝에 개행문자를 읽지 않는다.            
+            bufReader.close();
+            bw.close();
+        }catch (FileNotFoundException e) {
+	            // TODO: handle exception
+        }catch(IOException e){
+	            System.out.println(e);
+        }
 	}
 }
 
